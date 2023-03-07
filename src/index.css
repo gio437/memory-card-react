@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(0, 109, 164);
 }
 
 code {
@@ -12,17 +13,48 @@ code {
     monospace;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 img {
   padding: 1rem;
   width: 9rem;
   height: 9rem;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-left-radius: 1px black;
 }
 
 p {
-  position: relative;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-/* .scores {
-  position: absolute;
+.card {
+  background-color: rgb(109, 147, 191);
+  width: 11rem;
+  box-shadow: 1px 1px 1px black;
+  margin: 1rem;
+}
+
+.scores {
+  text-align: end;
+  margin-right: 2rem;
+  font-size: 2rem;
+}
+
+.header {
   display: flex;
-} */
+  justify-content: space-between;
+}
+
+.title {
+  margin-top: 3px;
+  margin-left: 1rem;
+  font-size: 2rem;
+}

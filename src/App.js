@@ -21,11 +21,12 @@ import Persian from './images/persian.png';
 import Rex from './images/rex.png';
 import Russian from './images/russian.png';
 import Savannah from './images/savannah.png';
+import Score from './Score';
 
 
-function App() {
+export default function App() {
   let [cardArr, nextCard] = useState(new Array(19).fill(0));
-  cardArr[0] = 1;
+  //cardArr.splice(0, 1, 1);
 
   let [counter, nextCount] = useState(0);
   let [finalScore, nextFinalScore] = useState(counter);
@@ -38,7 +39,7 @@ function checkImage(e) {
       nextFinalScore(finalScore = counter);
     }
     nextCard(cardArr = new Array(19).fill(0));
-    cardArr[0] = 1;
+    //cardArr.splice(0, 1, 1);
     console.log(cardArr);
     RandomAssort();
     nextCount(counter = 0);
@@ -68,31 +69,90 @@ function RandomAssort() {
 
 
   return (
-    <div className='container'>
-      <div className = 'scores'>Score: {counter} High Score: {finalScore}</div>
-      <img className='siberian' alt='' src={Siberian} id='0' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Tabby} id='1' onClick={checkImage}></img>
-      <img className='savannah' alt='' src={Savannah} id='2' onClick={checkImage}></img>
-      <img className='abyssinian' alt='' src={Abyssinian} id='3' onClick={checkImage}></img>
-      <img className='bengal' alt='' src={Bengal} id='4' onClick={checkImage}></img>
-      <img className='black' alt='' src={Black} id='5' onClick={checkImage}></img>
-      <img className='blue' alt='' src={Blue} id='6' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Calico} id='7' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Egyptian} id='8' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Gray} id='9' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Half} id='10' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Mackeral} id='11' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Maine} id='12' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Munchkin} id='13' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Tortoise} id='14' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Kitten} id='15' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Orange} id='16' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Persian} id='17' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Russian} id='18' onClick={checkImage}></img>
-      <img className='tabby' alt='' src={Rex} id='19' onClick={checkImage}></img>
+    <div>
+      <Score counter={counter} finalScore={finalScore} />,
+      <div className='container'>
+        <div className='card'>
+          <img className='siberian' alt='' src={Siberian} id='1' onClick={checkImage}></img>
+          <p>Siberian</p>
+        </div>
+        <div className='card'>
+          <img className='tabby' alt='' src={Tabby} id='2' onClick={checkImage}></img>
+          <p>Tabby</p>
+        </div>
+        <div className='card'>
+          <img className='savannah' alt='' src={Savannah} id='3' onClick={checkImage}></img>
+          <p>Savannah</p>
+        </div>
+        <div className='card'>
+          <img className='abyssinian' alt='' src={Abyssinian} id='4' onClick={checkImage}></img>
+          <p>Abyssinian</p>
+        </div>
+        <div className='card'>
+          <img className='bengal' alt='' src={Bengal} id='5' onClick={checkImage}></img>
+          <p>Bengal</p>
+        </div>
+        <div className='card'>
+          <img className='black' alt='' src={Black} id='6' onClick={checkImage}></img>
+          <p>Black Cat</p>
+        </div>
+        <div className='card'>
+          <img className='blue' alt='' src={Blue} id='7' onClick={checkImage}></img>
+          <p>Blue Eyes</p>
+        </div>
+        <div className='card'>
+          <img className='Calico' alt='' src={Calico} id='8' onClick={checkImage}></img>
+          <p>Calico</p>
+        </div>
+        <div className='card'>
+          <img className='Egpytian' alt='' src={Egyptian} id='9' onClick={checkImage}></img>
+          <p>Egyptian</p>
+        </div>
+        <div className='card'>
+          <img className='Gray' alt='' src={Gray} id='10' onClick={checkImage}></img>
+          <p>Gray Cat</p>
+        </div>
+        <div className='card'>
+          <img className='Half' alt='' src={Half} id='11' onClick={checkImage}></img>
+          <p>Half-Face</p>
+        </div>
+        <div className='card'>
+          <img className='Mackeral' alt='' src={Mackeral} id='12' onClick={checkImage}></img>
+          <p>Mackeral</p>
+        </div>
+        <div className='card'>
+          <img className='Maine' alt='' src={Maine} id='13' onClick={checkImage}></img>
+          <p>Maine-Coon</p>
+        </div>
+        <div className='card'>
+          <img className='Munchkin' alt='' src={Munchkin} id='14' onClick={checkImage}></img>
+          <p>Munchkin</p>
+        </div>
+        <div className='card'>
+          <img className='Tortoise' alt='' src={Tortoise} id='15' onClick={checkImage}></img>
+          <p>Tortoise</p>
+        </div>
+        <div className='card'>
+          <img className='Kitten' alt='' src={Kitten} id='16' onClick={checkImage}></img>
+          <p>Kitten</p>
+        </div>
+        <div className='card'>
+          <img className='Orange' alt='' src={Orange} id='17' onClick={checkImage}></img>
+          <p>Orange Cat</p>
+        </div>
+        <div className='card'>
+          <img className='Persian' alt='' src={Persian} id='18' onClick={checkImage}></img>
+          <p>Persian</p>
+        </div>
+        <div className='card'>
+          <img className='Russian' alt='' src={Russian} id='19' onClick={checkImage}></img>
+          <p>Russian Blue</p>
+        </div>
+        <div className='card'>
+          <img className='Rex' alt='' src={Rex} id='20' onClick={checkImage}></img>
+          <p>Devon Rex</p>
+        </div>
+      </div>
     </div>
   )
-
 }
-
-export default App;
