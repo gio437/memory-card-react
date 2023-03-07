@@ -27,7 +27,8 @@ function App() {
   let [cardArr, nextCard] = useState(new Array(19).fill(0));
   cardArr[0] = 1;
 
-// useEffect
+  let [counter, nextCount] = useState(0);
+
 function checkImage(e) {
   const clickedVal = parseInt(e.target.id);
   console.log(clickedVal);
@@ -36,6 +37,8 @@ function checkImage(e) {
     cardArr[0] = 1;
     console.log(cardArr);
     RandomAssort();
+    nextCount(counter = 0);
+    console.log('counter= ' + counter);
   }
   else {ImageClicked(e)};
 }
@@ -44,6 +47,8 @@ function ImageClicked(e) {
   const clickedVal = parseInt(e.target.id);
   cardArr.splice(clickedVal, 1, clickedVal);
   console.log(cardArr);
+  nextCount(counter + 1);
+  console.log('counter= ' + counter);
   RandomAssort();
 }
 
@@ -61,8 +66,8 @@ function RandomAssort() {
 // how will you re arrange the images?
   return (
     <div className='container'>
+      <div>Score: {counter}</div>
       <img className='siberian' alt='' src={Siberian} id='0' onClick={checkImage}></img>
-      <p>Hello</p>
       <img className='tabby' alt='' src={Tabby} id='1' onClick={checkImage}></img>
       <img className='savannah' alt='' src={Savannah} id='2' onClick={checkImage}></img>
       <img className='abyssinian' alt='' src={Abyssinian} id='3' onClick={checkImage}></img>

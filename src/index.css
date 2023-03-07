@@ -17,3 +17,7 @@ img {
   width: 9rem;
   height: 9rem;
 }
+
+p {
+  position: relative;
+}
