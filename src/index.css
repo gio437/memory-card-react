@@ -12,10 +12,8 @@ code {
     monospace;
 }
 
-.siberian {
-  width: 30rem;
-}
-
-.tabby {
-  width: 30rem;
+img {
+  padding: 1rem;
+  width: 9rem;
+  height: 9rem;
 }
