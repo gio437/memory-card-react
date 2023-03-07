@@ -28,11 +28,15 @@ function App() {
   cardArr[0] = 1;
 
   let [counter, nextCount] = useState(0);
+  let [finalScore, nextFinalScore] = useState(counter);
 
 function checkImage(e) {
   const clickedVal = parseInt(e.target.id);
   console.log(clickedVal);
   if (clickedVal === cardArr[clickedVal]) {
+    if (counter > finalScore) {
+      nextFinalScore(finalScore = counter);
+    }
     nextCard(cardArr = new Array(19).fill(0));
     cardArr[0] = 1;
     console.log(cardArr);
@@ -63,10 +67,9 @@ function RandomAssort() {
 }
 
 
-// how will you re arrange the images?
   return (
     <div className='container'>
-      <div>Score: {counter}</div>
+      <div className = 'scores'>Score: {counter} High Score: {finalScore}</div>
       <img className='siberian' alt='' src={Siberian} id='0' onClick={checkImage}></img>
       <img className='tabby' alt='' src={Tabby} id='1' onClick={checkImage}></img>
       <img className='savannah' alt='' src={Savannah} id='2' onClick={checkImage}></img>
